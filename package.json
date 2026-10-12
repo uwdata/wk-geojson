@@ -1,0 +1,50 @@
+{
+	"name": "@uwdata/wk-geojson",
+	"version": "0.0.1",
+	"description": "Fast, dependency-free conversion between WKT/WKB and GeoJSON data.",
+	"keywords": [
+    "geojson",
+    "wkt",
+    "wkb",
+		"well-known text",
+		"well-known binary"
+  ],
+	"license": "BSD-3-Clause",
+	"packageManager": "pnpm@12.11.2",
+  "author": "Jeffrey Heer (https://idl.uw.edu)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uwdata/wk-geojson.git"
+  },
+	"scripts": {
+		"build": "tsc && rolldown -c",
+		"check": "tsc --noEmit",
+		"format": "oxfmt src test bench",
+		"lint": "oxfmt --check src test bench && oxlint src test bench",
+		"lint:fix": "oxfmt src test bench && oxlint --fix src test bench",
+		"test": "vitest run",
+		"size": "rolldown -c && node bench/size.js",
+		"bench": "tsc && node bench/decode.js",
+		"prepublishOnly": "pnpm run test && pnpm run lint && pnpm run build"
+	},
+	"files": ["dist", "src"],
+	"types": "./dist/index.d.ts",
+	"unpkg": "./dist/wk-geojson.umd.min.js",
+	"jsdelivr": "./dist/wk-geojson.umd.min.js",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"devDependencies": {
+		"@types/d3": "^7.4.3",
+		"@types/node": "^26.6.4",
+		"oxfmt": "^0.72.0",
+		"oxlint": "^1.87.0",
+		"rolldown": "^1.2.13",
+		"typescript": "^7.0.2",
+		"vitest": "^5.0.4"
+	}
+}
