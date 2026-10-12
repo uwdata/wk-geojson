@@ -20,7 +20,7 @@ wkbToGeoJSON(wkb); // round-trips to the same GeoJSON geometry
 geoJSONToWKT(geom); // "POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))"
 ```
 
-In the browser, the UMD bundle (`dist/wk-geojson.umd.min.js`) exposes these methods on the `wkGeojson` global.
+In the browser, the UMD bundle (`dist/wk-geojson.umd.min.js`) exposes these methods on the `wkgeojson` global.
 
 ## API
 
@@ -91,9 +91,9 @@ This project uses [pnpm](https://pnpm.io/).
 
 ```sh
 pnpm install
-pnpm test       # run unit tests (vitest)
-pnpm run lint   # check formatting (oxfmt) and lint (oxlint)
-pnpm run build  # compile TypeScript and build browser bundles into dist/
-pnpm run bench  # compare decoding from GeoJSON text, WKB, and WKT (US counties data)
-pnpm run size   # report bundle sizes
+pnpm test   # run unit tests (vitest)
+pnpm lint   # check formatting (oxfmt) and lint (oxlint)
+pnpm build  # compile TypeScript and build browser bundles into dist/
+pnpm bench  # compare decoding from GeoJSON text, WKB, and WKT (US counties data)
+pnpm size   # report bundle sizes
 ```
